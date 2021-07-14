@@ -1,0 +1,10 @@
+#!/bin/bash
+# Fail if anything inside the script fails.
+set -e
+
+# Install composer dependencies
+composer install
+
+# Install node dependencies
+npm install
+

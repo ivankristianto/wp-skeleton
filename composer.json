@@ -1,0 +1,60 @@
+{
+  "name": "ivankristianto/wp-skeleton",
+  "description": "WordPress Skeleton Project",
+  "type": "project",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Ivan Kristianto",
+      "email": "ivan@ik2.org"
+    }
+  ],
+  "scripts": {
+    "lint": "./vendor/bin/phpcs -p --cache=.config/cache/phpcs .",
+    "test": "docker run --rm -v $PWD:/code humanmade/plugin-tester"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "content/mu-plugins/vendor/{$name}/": [
+        "wpackagist-plugin/amp",
+        "wpackagist-plugin/google-site-kit",
+        "wpackagist-plugin/web-stories",
+        "wpackagist-plugin/wp-redis",
+        "wpackagist-plugin/query-monitor"
+      ],
+      "content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "composer/installers": "~1.0",
+    "johnpbloch/wordpress": "^5.7",
+    "wpackagist-plugin/web-stories": "^1.8.1",
+    "wpackagist-plugin/amp":"2.1.2",
+    "wpackagist-plugin/gutenberg":"^11",
+    "wpackagist-plugin/google-site-kit":"^1.36.0",
+    "wpackagist-plugin/wp-redis":"^1.1.2",
+    "wpackagist-plugin/query-monitor":"3.7.1",
+    "wpackagist-theme/twentytwentyone": "^1.3"
+  },
+  "require-dev": {
+    "altis/local-server": "^7.0",
+    "wp-coding-standards/wpcs": "^2.3",
+    "phpunit/phpunit": "^7"
+  }
+}
