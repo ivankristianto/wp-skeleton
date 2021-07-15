@@ -1,0 +1,66 @@
+{
+  "extends": "@humanmade/eslint-config",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "_": false,
+    "Backbone": false,
+    "jQuery": false,
+    "JSX": true,
+    "wp": false
+  },
+  "rules": {
+    "key-spacing": [
+      "error",
+      {
+        "mode": "minimum"
+      }
+    ],
+    "no-var": 0,
+    "comma-dangle": [
+      "off"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "indent": [
+      "error",
+      "tab",
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "space-unary-ops": [
+      "error",
+      {
+        "nonwords": false,
+        "overrides": {
+          "!": true
+        }
+      }
+    ],
+    "import/no-unresolved": [
+      "error",
+      {
+        "commonjs": true,
+        "ignore": [
+          "^@wordpress\/[^/]+"
+        ]
+      }
+    ],
+    "jsdoc/no-undefined-types": "warn",
+    "jsdoc/require-description-complete-sentence": "warn",
+    "jsdoc/require-hyphen-before-param-description": "warn",
+    "jsdoc/require-jsdoc": "warn",
+    "jsdoc/require-param": "warn",
+    "jsdoc/require-param-description": "warn",
+    "jsdoc/require-param-name": "warn",
+    "jsdoc/require-param-type": "warn",
+    "jsdoc/require-returns-type": 0,
+    "jsdoc/require-returns-description": 0,
+    "jsdoc/valid-types": "warn"
+  }
+}

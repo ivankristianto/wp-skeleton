@@ -24,12 +24,17 @@ content/backups/
 
 # Plugins #
 content/plugins/gutenberg
+content/plugins/web-stories
 
 # Themes #
 content/themes/*/node_modules
 content/themes/*/releases
 content/themes/*/bower_components
 content/themes/twentytwentyone
+
+# Built Files #
+content/themes/**/dist
+content/mu-plugins/**/dist
 
 # Packages #
 ############

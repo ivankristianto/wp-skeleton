@@ -1,0 +1,65 @@
+{
+    "extends": [
+        "@wordpress/stylelint-config"
+    ],
+    "rules": {
+        "at-rule-empty-line-before" : [
+            "always",
+            {
+                "except": [ "blockless-after-blockless", "first-nested" ],
+                "ignore": [ "after-comment" ]
+            }
+        ],
+        "block-closing-brace-newline-before": "always-multi-line",
+        "comment-empty-line-before": [
+            "always",
+            {
+                "except": [ "first-nested"],
+                "ignore": [ "stylelint-commands" ]
+            }
+        ],
+        "declaration-block-semicolon-newline-after": "always-multi-line",
+        "declaration-block-single-line-max-declarations": 4,
+        "declaration-property-unit-disallowed-list": {
+            "font-size": [ "px" ]
+        },
+        "declaration-property-unit-allowed-list": {
+            "animation": [ "ms" ],
+            "animation-duration": [ "ms" ],
+            "line-height": [],
+            "transition": [ "ms", "s" ],
+            "transition-duration": [ "ms" ]
+        },
+        "function-parentheses-space-inside": "always-single-line",
+        "function-comma-space-after": "always-single-line",
+        "function-url-quotes": "always",
+        "max-empty-lines": 1,
+        "max-line-length": 100,
+        "max-nesting-depth": [ 2, {
+            "ignore": [ "blockless-at-rules" ]
+        } ],
+        "media-feature-parentheses-space-inside": "always",
+        "number-max-precision": 3,
+        "rule-empty-line-before" : [
+            "always",
+            {
+                "except": [ "first-nested" ],
+                "ignore": [ "after-comment" ]
+            }
+        ],
+        "selector-class-pattern": [
+            "^([a-z][a-z0-9]*)([-_]+[a-z0-9]+)*$",
+            {
+                "message":
+                    "Selector should use lowercase and separate words with hyphens or underscores (selector-class-pattern)"
+            }
+        ],
+        "selector-id-pattern": [
+            "^([a-z][a-z0-9]*)([-_]+[a-z0-9]+)*$",
+            {
+                "message":
+                    "Selector should use lowercase and separate words with hyphens or underscores (selector-id-pattern)"
+            }
+        ]
+    }
+}

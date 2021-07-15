@@ -8,3 +8,5 @@ composer install
 # Install node dependencies
 npm install
 
+# Build
+npm build

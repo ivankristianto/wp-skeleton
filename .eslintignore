@@ -1,0 +1,13 @@
+# Vendor files.
+/content/uploads/**
+/content/plugins/**
+/node_modules/**
+/wordpress/**
+**/vendor/**
+
+# Themes files.
+/content/themes/twentytwentyone/**
+
+# Generated files.
+/content/mu-plugins/**/assets/dist/**
+/content/themes/skeleton/assets/dist/**
