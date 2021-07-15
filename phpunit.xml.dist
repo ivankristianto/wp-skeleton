@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit
-    bootstrap="tests/phpunit/bootstrap.php"
+    bootstrap=".tests/phpunit/bootstrap.php"
     backupGlobals="false"
     colors="true"
     convertErrorsToExceptions="true"
@@ -13,7 +13,7 @@
 	</php>
 
     <testsuites>
-        <testsuite name="html-minifier">
+        <testsuite name="skeleton">
             <directory prefix="class-test-" suffix=".php">./tests/phpunit/</directory>
         </testsuite>
     </testsuites>
