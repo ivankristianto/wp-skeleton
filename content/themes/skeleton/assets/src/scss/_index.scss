@@ -1,0 +1,9 @@
+/**
+ * Main file for importing SCSS into the theme.
+ */
+
+/**
+ * Vendor files that are order dependant.
+ */
+@import "vendor/normalize";
+@import "node_modules/sass-mq/mq";

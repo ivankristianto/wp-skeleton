@@ -1,0 +1,19 @@
+{
+  "name": "skeleton/sample",
+  "category": "common",
+  "collection": "skeleton",
+  "icon": "feedback",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "align": [
+      "full",
+      "wide"
+    ],
+    "anchor": true
+  }
+}

@@ -6,9 +6,11 @@ if ( defined( 'WP_INITIAL_INSTALL' ) && WP_INITIAL_INSTALL ) {
  * Load mu-plugins here.
  */
 $mu_plugins = [
+	'vendor/asset-loader/asset-loader.php',
 	"vendor/amp/amp.php",
 	"vendor/web-stories/web-stories.php",
 	"vendor/google-site-kit/google-site-kit.php",
+	"vendor/user-switching/user-switching.php",
 	"vendor/query-monitor/query-monitor.php",
 	"vendor/wp-redis/wp-redis.php"
 ];

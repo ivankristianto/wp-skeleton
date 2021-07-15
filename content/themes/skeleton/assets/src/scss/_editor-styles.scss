@@ -1,0 +1,14 @@
+/**
+ * Main file for importing SCSS into the editor.
+ */
+
+/**
+ * Start with the variables.
+ */
+@import "node_modules/sass-mq/mq";
+
+.editor-styles-wrapper.editor-styles-wrapper {
+	/**
+	 * Custom editor styles.
+	 */
+}
