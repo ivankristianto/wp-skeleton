@@ -14,7 +14,7 @@
 
     <testsuites>
         <testsuite name="skeleton">
-            <directory prefix="class-test-" suffix=".php">./tests/phpunit/</directory>
+            <directory prefix="class-test-" suffix=".php">./.tests/phpunit/</directory>
         </testsuite>
     </testsuites>
 </phpunit>

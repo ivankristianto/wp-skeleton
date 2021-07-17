@@ -2,13 +2,13 @@
 
 declare( strict_types = 1 );
 
-class Test_Minify_Functions extends WP_UnitTestCase {
+class Test_Skeleton extends WP_UnitTestCase {
 	/**
-	 * Test Admin is_html_minifier_enabled function
+	 * Test sample function.
 	 *
 	 * @return void
 	 */
-	public function test_skeleton() : void {
+	public function test_sample_function() : void {
 		$this->assertTrue(true);
 	}
 }

@@ -19,9 +19,8 @@ concurrency:
 
 jobs:
     unit-php:
-        name: PHP
+        name: PHP Unit Test
         runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'pull_request' }}
 
         steps:
             -   uses: actions/checkout@v2

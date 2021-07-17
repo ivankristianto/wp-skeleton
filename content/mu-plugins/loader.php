@@ -12,7 +12,7 @@ $mu_plugins = [
 	"vendor/user-switching/user-switching.php",
 	"vendor/query-monitor/query-monitor.php",
 	"vendor/wp-redis/wp-redis.php",
-	"vendor/stream/stream.php"
+//	"vendor/stream/stream.php"
 ];
 
 foreach ( $mu_plugins as $file ) {
