@@ -23,7 +23,7 @@
   "scripts": {
     "build": "webpack --config .config/webpack/prod.js",
     "dev": "webpack-dev-server --config .config/webpack/dev.js",
-    "lint:css": "stylelint \"**/*.scss\"",
+    "lint:css": "stylelint '**/*.{css,scss}'",
     "lint:js": "eslint .",
     "lint": "npm run lint:js; npm run lint:css"
   },
