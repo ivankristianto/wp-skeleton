@@ -12,7 +12,8 @@ $mu_plugins = [
 	"vendor/user-switching/user-switching.php",
 	"vendor/query-monitor/query-monitor.php",
 	"vendor/wp-redis/wp-redis.php",
-//	"vendor/stream/stream.php"
+	"blocks/load.php",
+	"stream/load.php"
 ];
 
 foreach ( $mu_plugins as $file ) {
