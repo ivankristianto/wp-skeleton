@@ -1,0 +1,43 @@
+name: Unit Tests
+
+# Since Unit Tests are required to pass for each PR,
+# we cannot disable them for documentation-only changes.
+on:
+    pull_request:
+    push:
+        branches:
+            - main
+            - staging
+            - development
+
+# Cancels all previous workflow runs for pull requests that have not completed.
+concurrency:
+    # The concurrency group contains the workflow name and the branch name for pull requests
+    # or the commit hash for any other events.
+    group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
+    cancel-in-progress: true
+
+jobs:
+    unit-php:
+        name: PHP
+        runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'pull_request' }}
+
+        steps:
+            -   uses: actions/checkout@v2
+
+            -   name: Cache Composer dependencies
+                uses: actions/cache@v2
+                with:
+                    path: /tmp/composer-cache
+                    key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+            -   name: Install dependencies
+                uses: php-actions/composer@v6
+                with:
+                    php_version: 7.4
+                    version: 2
+
+            -   name: Running multisite unit tests
+                run: composer test
+                if: ${{ success() || failure() }}
