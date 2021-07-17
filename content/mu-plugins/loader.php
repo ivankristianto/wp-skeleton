@@ -11,7 +11,8 @@ $mu_plugins = [
 	"vendor/google-site-kit/google-site-kit.php",
 	"vendor/user-switching/user-switching.php",
 	"vendor/query-monitor/query-monitor.php",
-	"vendor/wp-redis/wp-redis.php"
+	"vendor/wp-redis/wp-redis.php",
+	"vendor/stream/stream.php"
 ];
 
 foreach ( $mu_plugins as $file ) {
