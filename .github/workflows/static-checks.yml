@@ -1,7 +1,5 @@
-name: Unit Tests
+name: Static Analysis (PHP/CSS/JS Linting)
 
-# Since Unit Tests are required to pass for each PR,
-# we cannot disable them for documentation-only changes.
 on:
     pull_request:
         branches:
@@ -17,9 +15,9 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-    unit-php:
-        name: PHP Unit Test
+    linting:
         runs-on: ubuntu-latest
+        timeout-minutes: 10
 
         steps:
             -   uses: actions/checkout@v2
@@ -27,8 +25,13 @@ jobs:
             -   name: Cache Composer dependencies
                 uses: actions/cache@v2
                 with:
-                    path: /tmp/composer-cache
-                    key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+                    path: /tmp/cache
+                    key: ${{ runner.os }}-${{ hashFiles('**/composer.lock')-${{ hashFiles('**/package-lock.json') }}
+
+            -   name: Use Node.js 14
+                uses: actions/setup-node@v2
+                with:
+                    node-version: 14
 
             -   name: Install Composer dependencies
                 uses: php-actions/composer@v6
@@ -36,6 +39,14 @@ jobs:
                     php_version: 7.4
                     version: 2
 
-            -   name: Running multisite unit tests
-                run: composer test
-                if: ${{ success() || failure() }}
+            -   name: Install Node Dependencies
+                run: npm install
+
+            -   name: Run PHPCS
+                run: composer lint
+
+            -   name: Run ESLint
+                run: npm run lint:js
+
+            -   name: Run Stylint
+                run: npm run lint:css
