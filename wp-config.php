@@ -12,6 +12,8 @@
  * @package altis/cms
  */
 
+// Trigger LH.
+
 // Load an escape hatch early load file, if it exists.
 if ( file_exists( __DIR__ . '/.config/load-early.php' ) ) {
 	require_once __DIR__ . '/.config/load-early.php';
