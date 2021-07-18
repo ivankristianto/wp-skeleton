@@ -8,4 +8,5 @@ namespace Skeleton\Theme;
 // Add all required files here.
 require_once __DIR__ . '/inc/html-header.php';
 
+// Kick start
 bootstrap();
