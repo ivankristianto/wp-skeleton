@@ -45,7 +45,7 @@ jobs:
                 run: npm install
 
             -   name: Run PHPCS
-                run: ls -al && composer lint
+                run: ls -al && phpcs -i && composer lint
 
             -   name: Run ESLint
                 run: npm run lint:js

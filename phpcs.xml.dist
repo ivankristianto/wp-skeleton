@@ -25,22 +25,22 @@
 
 	<!-- Do not require docblocks for unit tests -->
 	<rule ref="Squiz.Commenting.FunctionComment.Missing">
-		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.FileComment.Missing">
-		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.ClassComment.Missing">
-		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.ClassComment.SpacingAfter">
-		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
 	</rule>
 	<rule ref="Squiz.Commenting.FunctionComment.MissingParamTag">
-		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
 	</rule>
 	<rule ref="Generic.Commenting.DocComment.Empty">
-		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
 	</rule>
 
 	<!-- Ignored files & directories -->
