@@ -11,7 +11,7 @@
     }
   ],
   "scripts": {
-    "format": "./vendor/bin/phpcbf --standard=phpcs.xml.dist --report-summary --report-source",
+    "format": "./vendor/bin/phpcbf --standard=phpcs.xml.dist --report-summary --report-source .",
     "lint": "./vendor/bin/phpcs --standard=phpcs.xml.dist -p --cache=.config/cache/phpcs .",
     "test": "docker run --rm -v $PWD:/code humanmade/plugin-tester"
   },

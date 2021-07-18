@@ -5,20 +5,13 @@
 	<!-- Set a minimum PHP version for PHPCompatibility -->
 	<config name="testVersion" value="7.4-" />
 
-	<!-- Whenever possible, cache the scan results and re-use those for unchanged files on the next scan. -->
+	<arg name="basepath" value="." />
 	<arg name="cache"/>
+	<arg value="ps"/>
 
-	<!-- Show sniff codes in all reports. -->
-	<arg value="s"/>
-
-	<!-- Check up to 20 files simultaneously. -->
-	<arg name="parallel" value="20"/>
-
-	<!-- Set the memory limit to 256M. -->
-	<!-- Ref: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#specifying-phpini-settings -->
-	<ini name="memory_limit" value="256M"/>
-
-	<config name="installed_paths" value="vendor/wp-coding-standards/wpcs,vendor/fig-r/psr2r-sniffer" />
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress.WP.I18n"/>
 
 	<rule ref="./vendor/wp-coding-standards/wpcs/WordPress-Extra/ruleset.xml">
 		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
@@ -28,8 +21,27 @@
 		<exclude name="WordPress.PHP.YodaConditions.NotYoda"/>
 	</rule>
 
-
 	<arg name="extensions" value="php" />
+
+	<!-- Do not require docblocks for unit tests -->
+	<rule ref="Squiz.Commenting.FunctionComment.Missing">
+		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.FileComment.Missing">
+		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.ClassComment.Missing">
+		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.ClassComment.SpacingAfter">
+		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.FunctionComment.MissingParamTag">
+		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+	</rule>
+	<rule ref="Generic.Commenting.DocComment.Empty">
+		<exclude-pattern>./tests/phpunit/*</exclude-pattern>
+	</rule>
 
 	<!-- Ignored files & directories -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
