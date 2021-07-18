@@ -105,18 +105,6 @@ function setup_theme_support(): void {
 		],
 	] );
 
-	/* Block editor - disable custom colours */
-	// add_theme_support( 'disable-custom-colors' );
-
-	/* Block editor - disable setting font sizes by pixel size */
-	// add_theme_support( 'disable-custom-font-sizes' );
-
-	/* Block editor - disable custom gradient */
-	// add_theme_support( 'disable-custom-gradients', true );
-
-	/* Block editor - disable gradient presets */
-	// add_theme_support( 'editor-gradient-presets', [] );
-
 	/* AMP */
 	add_theme_support( 'amp', [
 		'paired'              => true,

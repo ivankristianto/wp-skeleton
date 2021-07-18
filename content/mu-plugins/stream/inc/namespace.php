@@ -1,6 +1,8 @@
 <?php
 /**
  * Stream Log
+ *
+ * @package Skeleton\Stream
  */
 
 namespace Skeleton\Stream;

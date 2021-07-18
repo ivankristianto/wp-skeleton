@@ -43,7 +43,7 @@ function enqueue_assets(): void {
 	);
 
 	wp_localize_script( 'skeleton-theme', 'skeletonThemeConfig', [
-		'customKey'    => 'Add Custom Key Here',
+		'customKey' => 'Add Custom Key Here',
 	] );
 }
 

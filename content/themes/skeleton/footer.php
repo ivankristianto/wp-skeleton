@@ -4,6 +4,7 @@
  *
  * @package Skeleton\Theme
  */
+
 ?>
 
 <footer class="page__footer footer">

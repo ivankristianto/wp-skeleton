@@ -1,4 +1,9 @@
 <?php
+/**
+ * Skeleton Blocks
+ *
+ * @package Skeleton\Blocks
+ */
 
 namespace Skeleton\Blocks;
 
@@ -40,7 +45,7 @@ function enqueue_editor_assets(): void {
 		dirname( __DIR__ ) . '/assets/dist/asset-manifest.json',
 		'blocks-editor.js',
 		[
-			'handle' => 'skeleton-blocks-editor',
+			'handle'       => 'skeleton-blocks-editor',
 			'dependencies' => [
 				'wp-blocks',
 				'wp-compose',
@@ -56,7 +61,7 @@ function enqueue_editor_assets(): void {
 		'blocks-editor.css',
 		[
 			'dependencies' => [ 'wp-block-editor' ],
-			'handle' => 'skeleton-blocks-editor',
+			'handle'       => 'skeleton-blocks-editor',
 		]
 	);
 }
@@ -69,7 +74,7 @@ function enqueue_frontend_assets(): void {
 		dirname( __DIR__ ) . '/assets/dist/asset-manifest.json',
 		'blocks-frontend.js',
 		[
-			'handle' => 'skeleton-blocks-frontend-script',
+			'handle'       => 'skeleton-blocks-frontend-script',
 			'dependencies' => [
 				'wp-dom-ready',
 			],

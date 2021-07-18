@@ -5,9 +5,10 @@
 	<!-- Set a minimum PHP version for PHPCompatibility -->
 	<config name="testVersion" value="7.4-" />
 
-	<arg name="basepath" value="." />
 	<arg name="cache"/>
 	<arg value="ps"/>
+	<arg name="parallel" value="8"/>
+	<arg name="extensions" value="php" />
 
 	<rule ref="WordPress-Core"/>
 	<rule ref="WordPress-Docs"/>
@@ -21,7 +22,9 @@
 		<exclude name="WordPress.PHP.YodaConditions.NotYoda"/>
 	</rule>
 
-	<arg name="extensions" value="php" />
+	<rule ref="WordPress.WP.GlobalVariablesOverride.Prohibited">
+		<exclude-pattern>./content/mu-plugins/loader.php</exclude-pattern>
+	</rule>
 
 	<!-- Do not require docblocks for unit tests -->
 	<rule ref="Squiz.Commenting.FunctionComment.Missing">
@@ -43,12 +46,17 @@
 		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
 	</rule>
 
+	<rule ref="Squiz.Commenting.FileComment.MissingPackageTag">
+		<exclude-pattern>./.tests/phpunit/*</exclude-pattern>
+		<exclude-pattern>./.config/*</exclude-pattern>
+	</rule>
+
 	<!-- Ignored files & directories -->
-	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern>*/vendor/*</exclude-pattern>
-	<exclude-pattern>/index.php</exclude-pattern>
-	<exclude-pattern>/wordpress/*</exclude-pattern>
-	<exclude-pattern>/wp-config.php</exclude-pattern>
-	<exclude-pattern>/content/plugins/*</exclude-pattern>
-	<exclude-pattern>/content/mu-plugins/vendor/*</exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>wordpress/*</exclude-pattern>
+	<exclude-pattern>content/plugins/*</exclude-pattern>
+	<exclude-pattern>content/mu-plugins/vendor/*</exclude-pattern>
+	<exclude-pattern>wp-config.php</exclude-pattern>
+	<exclude-pattern>index.php</exclude-pattern>
 </ruleset>
