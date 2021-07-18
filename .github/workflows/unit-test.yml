@@ -27,13 +27,14 @@ jobs:
             -   name: Cache Composer dependencies
                 uses: actions/cache@v2
                 with:
-                    path: /tmp/composer-cache
+                    path: /tmp/cache
                     key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
 
             -   name: Install Composer dependencies
                 uses: php-actions/composer@v6
                 with:
                     php_version: 7.4
+                    php_extensions: pcov
                     version: 2
 
             -   name: Running multisite unit tests
