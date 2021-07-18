@@ -11,8 +11,8 @@
     }
   ],
   "scripts": {
-    "format": "./vendor/bin/phpcbf --standard=phpcs.xml.dist --report-summary --report-source .",
-    "lint": "./vendor/bin/phpcs --standard=phpcs.xml.dist -p --cache=.config/cache/phpcs .",
+    "format": "phpcbf --standard=phpcs.xml.dist --report-summary --report-source .",
+    "lint": "phpcs --standard=phpcs.xml.dist -p --cache=.config/cache/phpcs .",
     "test": "docker run --rm -v $PWD:/code humanmade/plugin-tester"
   },
   "repositories": [
@@ -60,7 +60,11 @@
   },
   "require-dev": {
     "altis/local-server": "^7.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpcompatibility/php-compatibility": "^9.3",
     "wp-coding-standards/wpcs": "^2.3",
+    "sirbrillig/phpcs-variable-analysis": "^2.8",
     "phpunit/phpunit": "^7"
   }
 }
