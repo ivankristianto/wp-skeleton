@@ -1,4 +1,10 @@
 <?php
+/**
+ * Loader.
+ *
+ * @package Skeleton
+ */
+
 if ( defined( 'WP_INITIAL_INSTALL' ) && WP_INITIAL_INSTALL ) {
 	return;
 }
@@ -7,13 +13,13 @@ if ( defined( 'WP_INITIAL_INSTALL' ) && WP_INITIAL_INSTALL ) {
  */
 $mu_plugins = [
 	'vendor/asset-loader/asset-loader.php',
-	"vendor/amp/amp.php",
-	"vendor/google-site-kit/google-site-kit.php",
-	"vendor/user-switching/user-switching.php",
-	"vendor/query-monitor/query-monitor.php",
-	"vendor/wp-redis/wp-redis.php",
-	"blocks/load.php",
-	"stream/load.php"
+	'vendor/amp/amp.php',
+	'vendor/google-site-kit/google-site-kit.php',
+	'vendor/user-switching/user-switching.php',
+	'vendor/query-monitor/query-monitor.php',
+	'vendor/wp-redis/wp-redis.php',
+	'blocks/load.php',
+	'stream/load.php',
 ];
 
 foreach ( $mu_plugins as $file ) {
@@ -59,7 +65,7 @@ add_action( 'pre_current_active_plugins', function () use ( $mu_plugins ) {
 	$plugins_per_page = $total_this_page;
 	$wp_list_table->set_pagination_args( [
 		'total_items' => $total_this_page,
-		'per_page' => $plugins_per_page,
+		'per_page'    => $plugins_per_page,
 	] );
 } );
 

@@ -4,7 +4,7 @@ module.exports = {
 			target: 'lhci',
 		},
 		assert: {
-			'budgetsFile': "./.config/budget.json",
+			'budgetsFile': './.config/budget.json',
 			preset: 'lighthouse:recommended',
 			'assertions': {
 				'dom-size': [ 'error', { 'maxNumericValue': 3000 } ],
