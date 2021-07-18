@@ -38,4 +38,5 @@
 	<exclude-pattern>/wordpress/*</exclude-pattern>
 	<exclude-pattern>/wp-config.php</exclude-pattern>
 	<exclude-pattern>/content/plugins/*</exclude-pattern>
+	<exclude-pattern>/content/mu-plugins/vendor/*</exclude-pattern>
 </ruleset>
