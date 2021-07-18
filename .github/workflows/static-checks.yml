@@ -26,7 +26,7 @@ jobs:
                 uses: actions/cache@v2
                 with:
                     path: /tmp/cache
-                    key: ${{ runner.os }}-${{ hashFiles('**/composer.lock')-${{ hashFiles('**/package-lock.json') }}
+                    key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}-${{ hashFiles('**/package-lock.json') }}
 
             -   name: Use Node.js 14
                 uses: actions/setup-node@v2
