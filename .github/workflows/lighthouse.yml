@@ -37,7 +37,7 @@ jobs:
 
             -   name: Run local server
                 run: |
-                    composer server start
+                    sed -i $'s/setTty( true )/setTty( false )/g' vendor/altis/local-server/inc/composer/class-command.php && composer server start
 
             -   name: Run Lighthouse CI
                 run: |
