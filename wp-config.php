@@ -12,7 +12,7 @@
  * @package altis/cms
  */
 
-// Trigger LH.
+// Trigger LH. Trigger again.
 
 // Load an escape hatch early load file, if it exists.
 if ( file_exists( __DIR__ . '/.config/load-early.php' ) ) {
