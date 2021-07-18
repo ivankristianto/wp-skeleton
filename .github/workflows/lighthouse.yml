@@ -1,0 +1,54 @@
+name: Lighthouse CI
+on:
+    pull_request:
+        branches:
+            - main
+            - staging
+            - development
+jobs:
+    lighthouse-ci:
+        name: Lighthouse CI
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+
+            -   name: Cache Composer dependencies
+                uses: actions/cache@v2
+                with:
+                    path: /tmp/cache
+                    key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+            -   name: Install Composer dependencies
+                uses: php-actions/composer@v6
+                with:
+                    php_version: 7.4
+                    php_extensions: pcov
+                    version: 2
+
+            -   name: Use Node.js 12
+                uses: actions/setup-node@v2
+                with:
+                    node-version: 12.x
+
+            -   name: Install @lhci/cli
+                run: |
+                    npm install -g @lhci/cli@0.8.x
+
+            -   name: Run local server
+                run: |
+                    composer server start
+
+            -   name: Run Lighthouse CI
+                run: |
+                    lhci collect --url=https://wp-skeleton.altis.dev --numberOfRuns=1 --silent
+
+            -   name: Upload Artifact to Lighthouse CI Server
+                run: |
+                    lhci upload
+                env:
+                    LHCI_GITHUB_APP_TOKEN: ${{secrets.LHCI_GITHUB_APP_TOKEN}}
+                    LHCI_SERVER_BASE_URL: ${{secrets.LHCI_SERVER_BASE_URL}}
+                    LHCI_TOKEN: ${{secrets.LHCI_TOKEN}}
+            # - name: Assert Artifact
+            #   run: |
+            #     lhci assert
