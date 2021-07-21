@@ -7,18 +7,10 @@
 
 namespace Skeleton\Stream;
 
-/**
- * Bootstrapper
- */
 function bootstrap() {
 	add_action( 'plugins_loaded', __NAMESPACE__ . '\\on_plugins_loaded', 1 );
 }
 
-/**
- * Load plugins.
- *
- * @return void
- */
 function on_plugins_loaded(): void {
 	if ( defined( 'WP_INSTALLING' ) && WP_INSTALLING ) {
 		return;
