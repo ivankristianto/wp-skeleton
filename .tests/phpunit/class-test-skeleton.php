@@ -9,6 +9,6 @@ class Test_Skeleton extends WP_UnitTestCase {
 	 * @return void
 	 */
 	public function test_sample_function() : void {
-		$this->assertTrue( true );
+		$this->assertTrue( false );
 	}
 }
